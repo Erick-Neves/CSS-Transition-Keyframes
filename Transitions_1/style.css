@@ -10,10 +10,14 @@ body{
     align-items: center;
 }
 
+/*
+filter- aplica um filtro sobre o conteudo
+cursor:pointer- habilita a e captura a ação do ponteiro(mouse)
+*/
 .card{
     height: 400px;
     width: 500px;
-    background-image: url('Montanhas.jpg');
+    background-image: url('/img/Montanhas.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,6 +39,12 @@ body{
     position: relative;
 }
 
+/*
+::before- notação para definir um "estado" para um item
+display:block- gera uma quadrado transparente
+border: 1px solid white- atribui espessura para o contorno do bloco
+transition- habilita a troca de estado após periodo de tempo
+*/
 .card-wrapper::before{
     content: '';
     position: absolute;
@@ -46,14 +56,20 @@ body{
     transition: 0.3s;
 }
 
+/*
+letter-spacing- aumenta a distancia entre caracteres
+*/
 .card-wrapper h2{
     font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 4px;
     margin: 0;
-    transition: 00.3s;
+    transition: 0.3s;
 }
 
+/*
+visibility-hidden- esconde o objeto sobre outro
+*/
 .card-wrapper p{
     font-size: 0;
     visibility: hidden;
@@ -63,16 +79,26 @@ body{
     transition: 0.3s;
 }
 
+/*
+:hover- notação para tratar o evento de "ponteiro sobre elemento"
+filter:unset- remove filtros aplicados
+*/
 .card:hover{
     filter: unset;
 }
 
+/*
+> - utilizado para criar uma cadeia de acontecimentos e trocar estados
+*/
 .card:hover > .card-wrapper::before{
     height: 300px;
     width: 400px;
     opacity: 1;
 }
 
+/*
+visibility:visible - torna visivel o elemento e na posição de hierarquia do HTML
+*/
 .card:hover > .card-wrapper p {
     opacity: 1;
     visibility: visible;

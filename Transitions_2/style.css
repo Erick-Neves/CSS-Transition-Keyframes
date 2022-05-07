@@ -22,6 +22,12 @@
     cursor: pointer;
 }
 
+/*
+Para que os eventos de um elemento-pai afete os elementos-filhos, declare na sequencia Pai>Filho
+Nesse caso, estamos criando um bastão(-) solido e com a cor branca
+Border-radius- habilita as bordas redondas
+transition:easy-in-out- habilita o animação suave, de entrada e saida de estado 
+*/
 .checkbox .trace{
     width: 90px;
     height: 8px;
@@ -31,6 +37,10 @@
     transition: 0.5s ease-in-out;
 }
 
+/*
+:nth-child(x)- para acessar as propriedades de transformação do objeto filho
+top- define a posição para o objeto em relaçao ao seu centro
+*/
 .checkbox .trace:nth-child(1){
     top: 26px;
     transform: rotate(0);
@@ -46,15 +56,26 @@
     transform: rotate(0);
 }
 
+/*
+É a caixa visivel para acionar o checkbox
+display:none- é possivel esconder o elemento, sem perder a propriedade ativa
+*/
 #toggle{
     display: none;
 }
 
+/*
+#toggle:checked + - cria a cadeia sequencial de ações, relacionado ao acionamento da checkbox
+transform:rotate(Xdeg)- rotaciona a forma/objeto em graus
+*/
 #toggle:checked + .checkbox .trace:nth-child(1){
     transform: rotate(45deg);
     top: 47px;
 }
 
+/*
+transform:translate(Xpx,Ypx)- movimenta o objeto em X e Y 
+*/
 #toggle:checked + .checkbox .trace:nth-child(2){
     transform: translate(-100px);
     width: 30px;
